@@ -1,2 +1,7 @@
-# Data-Structures-and-Algorithms
-This repository contains all the exercises and the notes from my Data Structures and Algorithms classes at Ashesi University
+# Data-Structures-and-Algorithms _ Ashesi University
+
+## Week_01: Introductory Concepts
+
+### Key definitions: 
+
+### Important Notes: 
