@@ -1,4 +1,4 @@
-# Data-Structures-and-Algorithms _ Ashesi University
+# Data-Structures-and-Algorithms
 
 ## Week_01: Introductory Concepts
 
