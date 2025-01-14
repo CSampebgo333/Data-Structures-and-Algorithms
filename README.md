@@ -10,6 +10,8 @@
 ### Outcomes:
 - 
 
-### Definitions: 
+### Definitions:
+- **Data type** is defined by the value it can take and the operations that can be done on it.
+-  **Data Structures** is a logical or mathematical model of a particular organization or data.
 
 ### Important Notes: 
