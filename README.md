@@ -7,9 +7,9 @@
 - Algorithm is a different but highly related concept.
 - Therefore, good knowledge of data structures and algorithms used to manipulate them is very important to build efficient software.
 
-### Key Outcomes:
+### Outcomes:
 - 
 
-### Key definitions: 
+### Definitions: 
 
 ### Important Notes: 
