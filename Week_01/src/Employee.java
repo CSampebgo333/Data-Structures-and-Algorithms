@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private ArrayList<Integer> workHours;
     private int totalWorkHours;
@@ -28,6 +28,15 @@ public class Employee {
         {
             this.totalWorkHours += workHours.get(i);
         }
+    }
+
+    public int compareTo(Employee emp1){
+        return emp1.totalWorkHours - this.totalWorkHours;
+    }
+
+    public ArrayList<Integer> displayDataBase()
+    {
+        return this.workHours;
     }
 
     @Override

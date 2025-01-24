@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class EmployeeDriver {
@@ -33,9 +34,12 @@ public class EmployeeDriver {
             numEmp -= 1;
         }
 
+        Collections.sort(employees);
+
         for (int i = 0; i < employees.size(); i++)
         {
             System.out.print(employees.get(i).toString());
+            System.out.println(employees.get(i).displayDataBase());
         }
     }
 }
