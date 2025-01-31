@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/In-Class-Assignment/In-Class-Assignment.iml" filepath="$PROJECT_DIR$/In-Class-Assignment/In-Class-Assignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/Week_01/Week_01.iml" filepath="$PROJECT_DIR$/Week_01/Week_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Week_02/Week_02.iml" filepath="$PROJECT_DIR$/Week_02/Week_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Week_03/Week_03.iml" filepath="$PROJECT_DIR$/Week_03/Week_03.iml" />
