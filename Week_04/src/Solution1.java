@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution1 {
     public static double mergeArray(int[] arry1, int[] arry2){
         int [] mergedArray = new int[arry1.length + arry2.length];
         int i1 = 0;

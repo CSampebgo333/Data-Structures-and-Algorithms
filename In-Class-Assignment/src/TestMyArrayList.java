@@ -28,9 +28,6 @@ public class TestMyArrayList {
         System.out.println("Title of movies removed: " + removedMovie1.getTitle() + " and " + removedMovie2.getTitle());
         double averageRating2 = calculateAverageRating(movies);
         System.out.println("Average rating After remove: " + averageRating2);
-
-
-
     }
 
     public static double calculateAverageRating(MyArrayList<Movie> movies){
