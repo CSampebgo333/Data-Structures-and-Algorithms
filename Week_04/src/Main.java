@@ -18,5 +18,7 @@ public class Main{
         String str2 = "kanb";
         System.out.println(Solution2.areAlmostEqual(str1, str2));
 
+        String str = "PAYPALISIRING";
+        System.out.println(AlgorithmsDesign.convert(str, 3));
     }
 }
