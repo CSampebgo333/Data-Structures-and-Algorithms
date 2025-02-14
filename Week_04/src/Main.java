@@ -1,24 +1,18 @@
+import java.util.ArrayList;
+
 public class Main{
     public static void main(String[] args){
         /*
-
-        int[] array1 = {1, 2};
-        int[] array2 = {3, 4};
-        System.out.println(Solution1.mergeArray(array1, array2));
-
-        String str1 = "kelb";
-        String str2 = "kelb";
-
-        String str1 = "attack";
-        String str2 = "defend";
-
+            In class activity III
          */
+        int [] list1 = {3, -4, 5, -7, 6, 19, 19, 18, -3, 1, 3, 5, 7, 6, -8};
+        int [] list2 = {0, 1, 1, 2, 3, 3, 4, 4, 5, 6, 7, 7, 8, 9, 9, 16};
 
-        String str1 = "bank";
-        String str2 = "kanb";
-        System.out.println(Solution2.areAlmostEqual(str1, str2));
+        System.out.println("Number of Negative: " + InClassActivityIII.NumberOfNegative(list1));
+        System.out.println("Largest Difference: " + InClassActivityIII.LargestDifference(list2));
+        System.out.println("Repeated Values: " + InClassActivityIII.RepeatedValues(list1));
 
-        String str = "PAYPALISIRING";
-        System.out.println(AlgorithmsDesign.convert(str, 3));
+
+
     }
 }
