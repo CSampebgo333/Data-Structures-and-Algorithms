@@ -14,8 +14,8 @@ public class HistoryNode {
     @Override
     public String toString() {
         return "Node{" +
-                "url='" + url + '\'' +
-                ", timestamp='" + timestamp + '\'' +
+                "url = '" + url + '\'' +
+                ", timestamp = '" + timestamp + '\'' +
                 '}';
     }
 }

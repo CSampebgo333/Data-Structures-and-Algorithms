@@ -9,8 +9,7 @@ public class BasicArrayList <T> {
     private T[] copyArray;
 
     // Build constructors
-    public BasicArrayList(){
-        this.baseArray = (T[]) new Object[size];
+    public BasicArrayList(){ this.baseArray = (T[]) new Object[size];
     }
 
     public BasicArrayList(Collection<T> collection){
