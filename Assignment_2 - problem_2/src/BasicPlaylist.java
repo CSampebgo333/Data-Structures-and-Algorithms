@@ -9,21 +9,26 @@ public class BasicPlaylist {
         size = 0;
     }
 
-    public void displayPayList(){
-        Song currentSong = head;
-        while (currentSong != null){
-            System.out.print(currentSong);
-            currentSong = currentSong.next;
+    public void displayPlayList(){
+        if(size == 0){
+            System.out.println("No Song Found!");
+        }
+        else {
+            Song currentSong = head;
+            while (currentSong != null){
+                System.out.print(currentSong);
+                currentSong = currentSong.next;
+            }
         }
     }
 
     public void addAtEnd(Song song){
-        if(size == 0){
+        if (size == 0){
             this.head = song;
             this.tail = song;
             size += 1;
         }
-        else{
+        else {
             this.tail.next = song;
             size += 1;
         }
