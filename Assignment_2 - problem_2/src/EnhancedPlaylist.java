@@ -61,6 +61,50 @@ public class EnhancedPlaylist {
         }
     }
 
+    public void removeSong(String title){
+        if (size == 0){
+            System.out.println("No Song Found!");
+        }
+        else {
+            Song currentSong = head;
+            Song previousSong = currentSong;
+            Song nextSong = currentSong;
+            while(currentSong != null){
+                nextSong = currentSong.next;
+                if(title.equals(currentSong.getTitle())){
+                    previousSong.next = nextSong;
+                    nextSong.prev = previousSong;
+                    size -= 1;
+                }
+                previousSong = currentSong;
+                currentSong = currentSong.next;
+            }
+        }
+    }
+
+    public void removeSong(int position){
+        if (size == 0){
+            System.out.println("No Song Found!");
+        }
+        else {
+            int count = 1;
+            Song currentSong = head;
+            Song previousSong = currentSong;
+            Song nextSong = currentSong;
+            while (currentSong != null){
+                if (count == position){
+                    nextSong = currentSong.next;
+                    previousSong.next = nextSong;
+                    nextSong.prev = previousSong;
+                    size -= 1;
+                }
+                count += 1;
+                previousSong = currentSong;
+                currentSong = currentSong.next;
+            }
+        }
+    }
+
     public void displayPlayList(){
         if(size == 0){
             System.out.println("No Song Found!");

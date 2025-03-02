@@ -36,5 +36,20 @@ public class EnhancedDriver {
         // Calculate duration
         System.out.println("\n Total Playlist Duration: " + ZouglouPlayList.calculateTotalDuration() + " minutes");
 
+        System.out.println("\n======================================");
+        // REMOVE A SONG BY TITLE ('Allons à Gagnoa')
+        System.out.println("-- Removing 'Allons à Gagnoa' by title --");
+        ZouglouPlayList.removeSong("Allons à Gagnoa");
+        ZouglouPlayList.displayPlayList();
+        // Calculate duration
+        System.out.println("\n Total Playlist Duration: " + 	ZouglouPlayList.calculateTotalDuration() + " minutes");
+
+        System.out.println("\n======================================");
+        // REMOVE A SONG BY POSITION (Position 3)
+        System.out.println("-- Removing song at position 3 (Gbêtô) --");
+        ZouglouPlayList.removeSong(2);
+        ZouglouPlayList.displayPlayList();
+        // Calculate duration
+        System.out.println("\n Total Playlist Duration: " + 	ZouglouPlayList.calculateTotalDuration() + " minutes");
     }
 }
