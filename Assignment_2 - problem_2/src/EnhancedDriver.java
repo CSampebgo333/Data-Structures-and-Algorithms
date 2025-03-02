@@ -46,7 +46,7 @@ public class EnhancedDriver {
 
         System.out.println("\n======================================");
         // REMOVE A SONG BY POSITION (Position 3)
-        System.out.println("-- Removing song at position 3 (Gbêtô) --");
+        System.out.println("-- Removing song at position 2 (Zizigui) --");
         ZouglouPlayList.removeSong(2);
         ZouglouPlayList.displayPlayList();
         // Calculate duration
