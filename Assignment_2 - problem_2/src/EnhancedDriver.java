@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class EnhancedDriver {
     public static void main(String [] args){
 
@@ -51,5 +53,30 @@ public class EnhancedDriver {
         ZouglouPlayList.displayPlayList();
         // Calculate duration
         System.out.println("\n Total Playlist Duration: " + 	ZouglouPlayList.calculateTotalDuration() + " minutes");
+
+        System.out.println("\n======================================");
+        // ADD AT THE END OF THE PLAYLIST
+        System.out.println("-- Adding 'Premier Gaou' by Magic System --");
+        ZouglouPlayList.addAtEnd(new Song("Premier Gaou", "Magic System", 5.50));
+        ZouglouPlayList.displayPlayList();
+        // Calculate duration
+        System.out.println("\n Total Playlist Duration: " + ZouglouPlayList.calculateTotalDuration() + " minutes");
+
+        System.out.println("\n======================================");
+        // PLAY NEXT SONG
+        System.out.println("-- Playing next song after 'Gbêtô' --");
+        ZouglouPlayList.playNextSong("Gbêtô");
+
+        System.out.println("\n======================================");
+        // PLAY PREVIOUS SONG
+        System.out.println("-- Playing previous song before 'Gbêtô' --");
+        ZouglouPlayList.playPreviousSong("Gbêtô");
+
+        System.out.println("\n======================================");
+        // SHUFFLING PLAYLIST
+        System.out.println("-- Playlist after being shuffled --");
+        ZouglouPlayList.shufflePlayList();
+        ZouglouPlayList.displayPlayList();
+
     }
 }

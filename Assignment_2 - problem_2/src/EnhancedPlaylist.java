@@ -1,5 +1,7 @@
 import jdk.jshell.Snippet;
 
+import java.util.*;
+
 public class EnhancedPlaylist {
     private Song head;
     private Song tail;
@@ -18,9 +20,11 @@ public class EnhancedPlaylist {
         }
         else{
             this.tail.next = song;
+            song.prev = tail;
             this.tail = song;
             size += 1;
         }
+
     }
 
     public double calculateTotalDuration(){
@@ -39,7 +43,7 @@ public class EnhancedPlaylist {
     }
 
     public void addAtPosition(Song song, int position){
-        if (position <= 0 || position > size){
+        if (position <= 0 || position > this.size){
             System.out.println("Invalid Position!");
         }
         else {
@@ -52,7 +56,7 @@ public class EnhancedPlaylist {
                     currentSong.prev = song;
                     previousSong.next = song;
                     song.prev = previousSong;
-                    size += 1;
+                    this.size += 1;
                 }
                 previousSong = currentSong;
                 currentSong = currentSong.next;
@@ -62,19 +66,18 @@ public class EnhancedPlaylist {
     }
 
     public void removeSong(String title){
-        if (size == 0){
+        if (this.size == 0){
             System.out.println("No Song Found!");
         }
         else {
             Song currentSong = head;
             Song previousSong = currentSong;
-            Song nextSong = currentSong;
             while(currentSong != null){
-                nextSong = currentSong.next;
+                Song nextSong = currentSong.next;
                 if(title.equals(currentSong.getTitle())){
                     previousSong.next = nextSong;
                     nextSong.prev = previousSong;
-                    size -= 1;
+                    this.size -= 1;
                 }
                 previousSong = currentSong;
                 currentSong = currentSong.next;
@@ -83,20 +86,19 @@ public class EnhancedPlaylist {
     }
 
     public void removeSong(int position){
-        if (size == 0){
+        if (this.size == 0){
             System.out.println("No Song Found!");
         }
         else {
             int count = 1;
             Song currentSong = head;
             Song previousSong = currentSong;
-            Song nextSong = currentSong;
             while (currentSong != null){
                 if (count == position){
-                    nextSong = currentSong.next;
+                    Song nextSong = currentSong.next;
                     previousSong.next = nextSong;
                     nextSong.prev = previousSong;
-                    size -= 1;
+                    this.size -= 1;
                 }
                 count += 1;
                 previousSong = currentSong;
@@ -106,7 +108,7 @@ public class EnhancedPlaylist {
     }
 
     public void displayPlayList(){
-        if(size == 0){
+        if(this.size == 0){
             System.out.println("No Song Found!");
         }
         else {
@@ -118,7 +120,43 @@ public class EnhancedPlaylist {
         }
     }
 
+    public void playNextSong(String title){
+        Song currentSong = head;
+        while (currentSong != null){
+            if (currentSong.getTitle().equals(title)){
+                System.out.println("Playing: '" + currentSong.next.getTitle() + "' by '" + currentSong.next.getArtist() + "'");
+            }
+            currentSong = currentSong.next;
+        }
+    }
+
+    public void playPreviousSong(String title){
+        Song currentSong = head;
+        while (currentSong != null){
+            if (currentSong.getTitle().equals(title)){
+                System.out.println("Playing: '" + currentSong.prev.getTitle() + "' by '" + currentSong.prev.getArtist() + "'");
+            }
+            currentSong = currentSong.next;
+        }
+    }
+
+    public void shufflePlayList(){
+        ArrayList<Song> songs = new ArrayList<>();
+        Song currentSong = this.head;
+        while(currentSong != null){
+            songs.add(currentSong);
+            currentSong = currentSong.next;
+        }
+        Collections.shuffle(songs, new Random());
+
+        this.head = songs.get(0);
+        Song current = this.head;
+        for (int i = 1; i < songs.size(); i++){
+            current.next = songs.get(i);
+            current = current.next;
+        }
+        current.next = null;
+    }
+
     //DEBUGGING RESOURCES: System.out.println("Condition Reached: YES" + " Position=" + position + " SIZE=" + this.size);
-
-
 }

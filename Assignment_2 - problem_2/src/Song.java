@@ -21,6 +21,10 @@ public class Song {
         return this.duration;
     }
 
+    public String getArtist(){
+        return this.artist;
+    }
+
     @Override
     public String toString() {
         return "\n Song title: " + this.title + " | " +  "Artist: " + this.artist + " | " + "Duration: " + this.duration + " minutes";
