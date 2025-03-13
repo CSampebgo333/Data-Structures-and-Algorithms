@@ -52,5 +52,6 @@ public class BasicDriver {
         // Calculate duration after removal
         System.out.println("\n Total Playlist Duration: " + ReggaePlayList.calculateTotalDuration() + " minutes");
 
+        System.out.println("\nEND OF PROGRAM!\n");
     }
 }

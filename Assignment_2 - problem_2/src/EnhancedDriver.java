@@ -78,5 +78,7 @@ public class EnhancedDriver {
         ZouglouPlayList.shufflePlayList();
         ZouglouPlayList.displayPlayList();
 
+        System.out.println("\n\nEND OF PROGRAM!\n");
+
     }
 }

@@ -22,5 +22,7 @@ public class Main{
         // Test the displayHistoryBackward() method:
         System.out.println("\n");
         visitedPages.displayHistoryBackward();
+
+        System.out.println("\n\nEND OF PROGRAM!\n");
     }
 }

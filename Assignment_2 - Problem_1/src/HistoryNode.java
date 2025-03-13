@@ -6,11 +6,22 @@ public class HistoryNode {
     public HistoryNode prev = null;
     public HistoryNode next = null;
 
-    public HistoryNode(String url, String timestamp){
+    /**
+     * Constructs a HistoryNode with a given URL and timestamp.
+     *
+     * @param 'url' the URL visited
+     * @param 'timestamp' the time of the visit
+     */
+    public HistoryNode(String url, String timestamp) {
         this.url = url;
         this.timestamp = timestamp;
     }
 
+    /**
+     * Returns a string representation of the HistoryNode.
+     *
+     * @return a formatted string containing the URL and timestamp
+     */
     @Override
     public String toString() {
         return "Node{" +

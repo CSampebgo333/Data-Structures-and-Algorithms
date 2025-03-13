@@ -6,13 +6,27 @@ public class FullyFunctionalPlaylist {
     private Song head;
     private Song tail;
     private int size;
+    private boolean isContinuousPlayEnabled; // Flag for continuous play
 
     public FullyFunctionalPlaylist() {
         this.head = null;
         this.tail = null;
         this.size = 0;
+        this.isContinuousPlayEnabled = false; // Default: Normal play mode
     }
 
+    /**
+     * Toggles the continuous play mode of the playlist.
+     */
+    public void toggleContinuousPlay() {
+        isContinuousPlayEnabled = !isContinuousPlayEnabled;
+        System.out.println("Continuous Play: " + (isContinuousPlayEnabled ? "Enabled" : "Disabled"));
+    }
+
+    /**
+     * Calculates the total duration of all songs in the playlist.
+     * @return total duration of the playlist
+     */
     public double calculateTotalDuration() {
         if (size == 0) {
             return 0;
@@ -26,10 +40,12 @@ public class FullyFunctionalPlaylist {
         return totalDuration;
     }
 
+    /**
+     * Displays all songs in the playlist.
+     */
     public void displayPlayList() {
         if (this.size == 0) {
             System.out.println("No Song Found!");
-            return;
         }
         Song currentSong = head;
         do {
@@ -38,6 +54,10 @@ public class FullyFunctionalPlaylist {
         } while (currentSong != head);
     }
 
+    /**
+     * Adds a song to the end of the playlist.
+     * @param song the song to be added
+     */
     public void addAtEnd(Song song) {
         if (size == 0) {
             this.head = song;
@@ -51,9 +71,14 @@ public class FullyFunctionalPlaylist {
             head.prev = song;
             tail = song;
         }
-        size += 1;
+        size++;
     }
 
+    /**
+     * Adds a song at a specific position in the playlist.
+     * @param song the song to be added
+     * @param position the position to insert the song at
+     */
     public void addAtPosition(Song song, int position) {
         if (position <= 0 || position > size + 1) {
             System.out.println("Invalid Position!");
@@ -75,9 +100,13 @@ public class FullyFunctionalPlaylist {
             currentSong.next.prev = song;
             currentSong.next = song;
         }
-        size += 1;
+        size++;
     }
 
+    /**
+     * Removes a song from the playlist by title.
+     * @param title the title of the song to be removed
+     */
     public void removeSong(String title) {
         if (size == 0) {
             System.out.println("No song found!");
@@ -99,13 +128,17 @@ public class FullyFunctionalPlaylist {
                         tail = currentSong.prev;
                     }
                 }
-                size -= 1;
-                break;
+                size--;
+                return;
             }
             currentSong = currentSong.next;
         } while (currentSong != head);
     }
 
+    /**
+     * Removes a song from the playlist by position.
+     * @param position the position of the song to be removed
+     */
     public void removeSong(int position) {
         if (size == 0) {
             System.out.println("No Song Found!");
@@ -135,10 +168,14 @@ public class FullyFunctionalPlaylist {
                 tail = currentSong.prev;
             }
         }
-        size -= 1;
+        size--;
     }
 
-    public void continuousPlay(String title) {
+    /**
+     * Plays a song based on its title.
+     * @param title the title of the song to play
+     */
+    public void playSong(String title) {
         if (size == 0) {
             System.out.println("No songs available.");
             return;
@@ -147,7 +184,9 @@ public class FullyFunctionalPlaylist {
         do {
             if (currentSong.getTitle().equals(title)) {
                 System.out.println("Playing: '" + currentSong.getTitle() + "' by '" + currentSong.getArtist() + "'");
-                System.out.println("Next Song in the Playlist: '" + currentSong.next.getTitle() + "' by '" + currentSong.next.getArtist() + "'");
+                if (isContinuousPlayEnabled) {
+                    System.out.println("Next: '" + currentSong.next.getTitle() + "' by '" + currentSong.next.getArtist() + "'");
+                }
                 return;
             }
             currentSong = currentSong.next;
@@ -155,6 +194,9 @@ public class FullyFunctionalPlaylist {
         System.out.println("Song not found in playlist.");
     }
 
+    /**
+     * Shuffles the playlist to randomize song order.
+     */
     public void shufflePlayList() {
         if (size < 2) {
             return;

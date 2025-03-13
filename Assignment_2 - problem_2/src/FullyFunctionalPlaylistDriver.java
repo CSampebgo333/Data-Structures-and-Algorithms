@@ -9,7 +9,7 @@ public class FullyFunctionalPlaylistDriver {
         System.out.println("-- Adding 'Wend Mi' by Floby --");
         BurkinabePlayList.addAtEnd(new Song("Wend Mi", "Floby", 4.15));
         BurkinabePlayList.displayPlayList();
-        System.out.println("\nTotal Playlist Duration: " + BurkinabePlayList.calculateTotalDuration() + " minutes");
+        System.out.println("\n Total Playlist Duration: " + BurkinabePlayList.calculateTotalDuration() + " minutes");
 
         System.out.println("\n======================================");
         // ADD AT THE END OF A NON-EMPTY PLAYLIST
@@ -60,16 +60,25 @@ public class FullyFunctionalPlaylistDriver {
         BurkinabePlayList.displayPlayList();
         System.out.println("\n Total Playlist Duration: " + BurkinabePlayList.calculateTotalDuration() + " minutes");
 
+        System.out.println("\n======================================");
+        // TOGGLE CONTINUOUS PLAY FEATURE
+        System.out.println("-- Toggling Continuous Play Mode --");
+        BurkinabePlayList.toggleContinuousPlay();
+        BurkinabePlayList.playSong("Le chapeau du chef");
 
         System.out.println("\n======================================");
-        // PLAY SONG CONTINUOUSLY
-        System.out.println("-- Playing song continuously before 'Le chapeau du chef' --");
-        BurkinabePlayList.continuousPlay("Le chapeau du chef");
+        // TOGGLE CONTINUOUS PLAY AGAIN (DISABLE)
+        System.out.println("-- Disabling Continuous Play Mode --");
+        BurkinabePlayList.toggleContinuousPlay();
+        BurkinabePlayList.playSong("Le chapeau du chef");
 
         System.out.println("\n======================================");
         // SHUFFLING PLAYLIST
         System.out.println("-- Playlist after being shuffled --");
         BurkinabePlayList.shufflePlayList();
         BurkinabePlayList.displayPlayList();
+
+        System.out.println("\n\nEND OF PROGRAM!\n");
     }
+
 }
