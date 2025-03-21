@@ -35,12 +35,12 @@ public class ArrayBaseQueue {
         }
     }
 
-    public void enqueue(Integer item) throws Exception {
+    public void enqueue(Integer newItem) throws Exception {
         if (size == capacity){
             throw new Exception("Queue Overflow!");
         }
         else {
-            queue[++rear] = item;
+            queue[++rear] = newItem;
             size ++;
         }
     }

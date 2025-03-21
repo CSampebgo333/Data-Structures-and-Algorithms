@@ -20,9 +20,8 @@ public class ArrayBaseStack {
             throw new Exception("Stack underflow!");
         }
         else {
-            stack[top] = null;
-            top -= 1;
-            size -= 1;
+            stack[top--] = null;
+            size --;
         }
     }
 
