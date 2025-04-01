@@ -2,20 +2,21 @@ public class Main{
     public static void main(String [] args) throws Exception {
         System.out.println("\"In class Assignment II\"\n");
 
-        Task task1 = new Task("DSA Assignment", true);
-        Task task2 = new Task("Intro to AI Project", true);
-        Task task3 = new Task("Bring my cloths to the laundry", false);
-        Task task4 = new Task("Reflect on Linear Algebra Project", true);
-        Task task5 = new Task("Check Learners progress", false);
+        TaskNode task1 = new TaskNode("DSA Assignment", true);
+        TaskNode task2 = new TaskNode("Intro to AI Project", true);
+        TaskNode task3 = new TaskNode("Bring my cloths to the laundry");
+        TaskNode task4 = new TaskNode("Reflect on Linear Algebra Project");
+        TaskNode task5 = new TaskNode("Check Learners progress", true);
 
-        TaskManagementSystem tasks = new TaskManagementSystem();
+        ManagementSystem tasks = new ManagementSystem();
+        tasks.push(task1);
+        tasks.push(task2);
+        tasks.push(task3);
+        tasks.push(task4);
+        tasks.push(task5);
+        tasks.displayAll();
+        //System.out.println("\n*Reached*\n");
 
-        tasks.pushTask(task1);
-        tasks.pushTask(task2);
-        tasks.pushTask(task3);
-        tasks.pushTask(task4);
-        tasks.pushTask(task5);
-        tasks.displayTasks();
 
         System.out.println("\n\n");
 
@@ -33,12 +34,15 @@ public class Main{
         System.out.println("\nPOP....");
 
         tasks.pop(true);
-        System.out.println("After POPPING");
-        tasks.displayTasks();
+        tasks.pop(true);
+        //System.out.println("After POPPING");
+        //tasks.displayAll();
 
-        System.out.println("POPPED ELEMENTS");
+        System.out.println("\nPOPPED ELEMENTS\n");
         tasks.displayProcessedTask();
+        System.out.println("\nPOPPED ELEMENTS\n");
 
-
+        tasks.displayAll();
+        //System.out.println("Total Tasks Size: " + tasks.getTotalTaskSize());
     }
 }
